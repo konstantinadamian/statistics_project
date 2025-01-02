@@ -15,18 +15,18 @@ print(f'print statistics {df.describe()}')  # Print statistics of the dataframe
 groupby_columns = df.groupby(['Car'])['CO2'].sum().reset_index()
 
 # Filter data for Ford and Mercedes cars
-valus_fort = df[df['Car'] == 'Ford']['CO2']
-valus_mercedes = df[df['Car'] == 'Mercedes']['CO2']
+values_fort = df[df['Car'] == 'Ford']['CO2']
+values_mercedes = df[df['Car'] == 'Mercedes']['CO2']
 
 # Calculate mean CO2 for Ford and Mercedes
-mean_fort = valus_fort.mean()
-mean_mercedes = valus_mercedes.mean()
+mean_fort = values_fort.mean()
+mean_mercedes = values_mercedes.mean() 
 
 # Calculate the difference between means
 md = mean_fort - mean_mercedes
 
 # Calculate the standard error of the difference
-s_e_md = np.sqrt(mean_fort/len(valus_fort) + mean_mercedes/len(valus_mercedes))
+s_e_md = np.sqrt(mean_fort/len(values_fort) + mean_mercedes/len(values_mercedes))
 
 # Calculate the confidence interval for the difference
 result_ = (md + 1.96 * s_e_md) , (md - 1.96 * s_e_md)
