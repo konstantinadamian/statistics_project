@@ -33,9 +33,10 @@ result_ = (md + 1.96 * s_e_md) , (md - 1.96 * s_e_md)
 print(f'Confidence Interval for difference: {result_}')  # Print the confidence interval
 
 # Plot the total CO2 for each car
-plt.plot(groupby_columns['Car'], groupby_columns['CO2'], color='b')
-plt.xticks(rotation=45, fontsize=10)
-plt.yticks(fontsize=10)
+plt.bar(groupby_columns['Car'], groupby_columns['CO2'], color='lightsteelblue')
+plt.xticks(rotation=60, fontsize=8, color='dimgray')
+plt.yticks(fontsize=10,color='dimgray')
+plt.title('Total CO2 Emissions by Car Brand', fontsize=14)
 plt.ylabel('CO2 numbers')
 plt.xlabel('Car name')
 plt.tight_layout()
