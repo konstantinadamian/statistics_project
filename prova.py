@@ -7,7 +7,7 @@ data = pd.read_csv("C:\\Users\\Konny\\Downloads\\data.csv")
 df = pd.DataFrame(data)
 
 # Print all columns in the dataframe
-print(f'print all columns in dataframe {df}')
+print(f'print all columns in dataframe {df.columns}')
 print(pd.isnull(df).sum())  # Check for missing values
 print(f'print statistics {df.describe()}')  # Print statistics of the dataframe
 
